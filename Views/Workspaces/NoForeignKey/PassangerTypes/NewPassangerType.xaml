@@ -1,0 +1,47 @@
+﻿<local:NewViewBase x:Class="Firma_Transport.Views.Workspaces.NoForeignKey.PassangerTypes.NewPassangerType"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma_Transport.Views" 
+             xmlns:passangertypes="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.PassangerTypes" d:DataContext="{d:DesignInstance Type=passangertypes:NewPassangerTypeViewModel}"
+                   mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Kod" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,8,0,8" Width="150" HorizontalAlignment="Left"
+                 Text="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Minimalna liczebność" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,8,0,8" Width="50" HorizontalAlignment="Left"
+                 Text="{Binding Path=NumberMin, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Maksymalna liczebność" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,8,0,8" Width="50" HorizontalAlignment="Left"
+                 Text="{Binding Path=NumberMax, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Minimalna waga bagażu" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="0,8,0,8" Width="50" HorizontalAlignment="Left"
+                 Text="{Binding Path=LuggageWeightMin, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Maksymalna waga bagażu" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="0,8,0,8" Width="50" HorizontalAlignment="Left"
+                 Text="{Binding Path=LuggageWeightMax, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Przystępność" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Accessibility, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Cena" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="0,8,0,8" Width="70" HorizontalAlignment="Left"
+                 Text="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</local:NewViewBase>

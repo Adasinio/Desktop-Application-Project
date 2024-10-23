@@ -1,0 +1,24 @@
+﻿<local:AllViewBase
+             x:Class="Firma_Transport.Views.Workspaces.NoForeignKey.PassangerTypes.AllPassangerTypes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma_Transport.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                  SelectedItem="{Binding SelectedPassangerType, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kod" Binding="{Binding Code}"/>
+                <DataGridTextColumn Header="OsóbMin" Binding="{Binding NumberMin}"/>
+                <DataGridTextColumn Header="OsóbMax" Binding="{Binding NumberMax}"/>
+                <DataGridTextColumn Header="BagażMin" Binding="{Binding LuggageWeightMin}"/>
+                <DataGridTextColumn Header="BagażMax" Binding="{Binding LuggageWeightMax}"/>
+                <DataGridTextColumn Header="Przystępność" Binding="{Binding Accessibility}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:AllViewBase>

@@ -1,0 +1,174 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Border" x:Key="NewJobPanelBorderStyle">
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="3"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="NewJobPanelLabelStyle">
+        <Setter Property="Foreground" Value="DarkGreen"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="NewJobVariableButtonStyle">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Margin" Value="3,3,0,0"/>
+        <Setter Property="Foreground" Value="DarkGreen"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="3"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="ToggleButton" x:Key="NewJobCollapsiblePanelButtonStyle">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Background" Value="GreenYellow"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="Margin" Value="0,0,5,0"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="3"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="Label" x:Key="NewJobVariableElementLabelStyle">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="DarkGreen"/>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="NewJobVariableElementTextBoxStyle">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Margin" Value="3,0,1,0"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="IsEnabled" Value="False"/>
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="1"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="ComboBox" x:Key="NewJobComboBoxStyle">
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+    </Style>
+
+    <!--#region Old Styles-->
+
+    <!--<Style TargetType="StackPanel" x:Key="NewJobStackPanelStyle">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
+    </Style>
+    
+    <Style TargetType="StackPanel" x:Key="NewJobStackPanelStyle2">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="NewJobStackPanelStyle3">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=CheckPeople, Path=IsChecked}" Value="False">
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="NewJobStackPanelStyle4">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=CheckCargo, Path=IsChecked}" Value="False">
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="NewJobStackPanelStyle5">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=JobRepeating, Path=IsChecked}" Value="False">
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Label" x:Key="NewJobLabelStyle">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="NewJobTextBoxStyle">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="CheckBox" x:Key="NewJobCheckBoxStyle">
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="ComboBox" x:Key="NewJobComboBoxStyle">
+        <Setter Property="Height" Value="30"/>
+    </Style>
+
+    <Style TargetType="RadioButton" x:Key="NewJobRadioButtonStyle">
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="NewJobButtonStyle">
+        <Setter Property="Background" Value="ForestGreen"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="20,0,20,0"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="15"/>
+            </Style>
+        </Style.Resources>
+    </Style>-->
+
+    <!--#endregion-->
+
+</ResourceDictionary>

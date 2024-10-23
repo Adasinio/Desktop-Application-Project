@@ -1,0 +1,22 @@
+﻿<local:AllViewBase x:Class="Firma_Transport.Views.Workspaces.NoForeignKey.Addresses.AllAdresses"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma_Transport.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}"
+                  SelectedItem="{Binding SelectedAddress, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Adresu" Binding="{Binding AddressId}"/>
+                <DataGridTextColumn Header="Miejscowość" Binding="{Binding City}"/>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding Street}"/>
+                <DataGridTextColumn Header="Nr Budynku" Binding="{Binding Building}"/>
+                <DataGridTextColumn Header="Numer Mieszkania" Binding="{Binding Flat}"/>
+                <DataGridTextColumn Header="Kod Pocztowy" Binding="{Binding PostalCode}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:AllViewBase>

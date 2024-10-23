@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="DataGridColumnHeader" x:Key="AllVehiclesDataGridColumnHeaderStyle">
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="AllVehiclesStackPanelStyle">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="AllVehiclesLabelStyle">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="AllVehiclesTextBoxStyle">
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="RadioButton" x:Key="AllVehiclesRadioButtonStyle">
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="Background" Value="YellowGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="ComboBox" x:Key="AllVehiclesComboBoxStyle">
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Width" Value="120"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="NewJobButtonStyle">
+        <Setter Property="Background" Value="ForestGreen"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="BorderBrush" Value="DarkGreen"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="20,0,20,0"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="15"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+</ResourceDictionary>

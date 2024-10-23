@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Firma_Transport</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ikony\cofnij.png" />
+    <None Remove="ikony\czas.png" />
+    <None Remove="ikony\data.png" />
+    <None Remove="ikony\droga.png" />
+    <None Remove="ikony\drukuj.png" />
+    <None Remove="ikony\edytuj.png" />
+    <None Remove="ikony\faktura.png" />
+    <None Remove="ikony\filtruj.png" />
+    <None Remove="ikony\kierowca.png" />
+    <None Remove="ikony\kierownica.png" />
+    <None Remove="ikony\kolejny.png" />
+    <None Remove="ikony\nowy.png" />
+    <None Remove="ikony\otwórz.png" />
+    <None Remove="ikony\pojazd.png" />
+    <None Remove="ikony\pomoc.png" />
+    <None Remove="ikony\poprzedni.png" />
+    <None Remove="ikony\Pracownicy.png" />
+    <None Remove="ikony\program.png" />
+    <None Remove="ikony\przystanek.png" />
+    <None Remove="ikony\rozkłady.png" />
+    <None Remove="ikony\sortuj.png" />
+    <None Remove="ikony\szukaj.png" />
+    <None Remove="ikony\trasa.png" />
+    <None Remove="ikony\Trasy.png" />
+    <None Remove="ikony\ustawienia.png" />
+    <None Remove="ikony\usterka.png" />
+    <None Remove="ikony\użytkownik.png" />
+    <None Remove="ikony\waluta.png" />
+    <None Remove="ikony\WorkspaceBackground.jpg" />
+    <None Remove="ikony\zamknij.png" />
+    <None Remove="ikony\zapisz.png" />
+    <None Remove="ikony\zatwierdź.png" />
+    <None Remove="ikony\ładunek.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ikony\droga.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ikony\cofnij.png" />
+    <Resource Include="ikony\czas.png" />
+    <Resource Include="ikony\data.png" />
+    <Resource Include="ikony\drukuj.png" />
+    <Resource Include="ikony\edytuj.png" />
+    <Resource Include="ikony\faktura.png" />
+    <Resource Include="ikony\filtruj.png" />
+    <Resource Include="ikony\kierowca.png" />
+    <Resource Include="ikony\kierownica.png" />
+    <Resource Include="ikony\kolejny.png" />
+    <Resource Include="ikony\nowy.png" />
+    <Resource Include="ikony\otwórz.png" />
+    <Resource Include="ikony\pojazd.png" />
+    <Resource Include="ikony\pomoc.png" />
+    <Resource Include="ikony\poprzedni.png" />
+    <Resource Include="ikony\Pracownicy.png" />
+    <Resource Include="ikony\program.png" />
+    <Resource Include="ikony\przystanek.png" />
+    <Resource Include="ikony\rozkłady.png" />
+    <Resource Include="ikony\sortuj.png" />
+    <Resource Include="ikony\szukaj.png" />
+    <Resource Include="ikony\trasa.png" />
+    <Resource Include="ikony\Trasy.png" />
+    <Resource Include="ikony\ustawienia.png" />
+    <Resource Include="ikony\usterka.png" />
+    <Resource Include="ikony\użytkownik.png" />
+    <Resource Include="ikony\waluta.png" />
+    <Resource Include="ikony\WorkspaceBackground.jpg" />
+    <Resource Include="ikony\zamknij.png" />
+    <Resource Include="ikony\zapisz.png" />
+    <Resource Include="ikony\zatwierdź.png" />
+    <Resource Include="ikony\ładunek.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MvvmLight" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\Entities\" />
+    <Folder Include="Model\Context\" />
+  </ItemGroup>
+
+</Project>

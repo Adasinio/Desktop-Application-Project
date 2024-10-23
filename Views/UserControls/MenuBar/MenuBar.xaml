@@ -1,0 +1,250 @@
+﻿<UserControl x:Class="Firma_Transport.View.UserControls.MenuBar.MenuBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="MenuBarStyle.xaml"/>
+    </UserControl.Resources>
+
+    <Menu Background="YellowGreen">
+
+        <MenuItem Header="Program" Style="{StaticResource MenuItemStyle}">
+            <MenuItem.Icon>
+                <Image Source="../../../ikony/program.png" Style="{StaticResource MenuItemImageStyle}"/>
+            </MenuItem.Icon>
+            <MenuItem Header="O programie"/>
+            <Separator/>
+            <MenuItem Header="Zapisz" InputGestureText="ctrl+s">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="S" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/zapisz.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Zapisz jako" InputGestureText="ctrl+shift+s" >
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="S" Modifiers="Ctrl+Shift"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <MenuItem Header="Importuj" InputGestureText="ctrl+o" >
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="O" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/otwórz.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Drukuj" InputGestureText="ctrl+d" >
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="D" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/drukuj.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Zamknij" InputGestureText="ctrl+F3" Command="{Binding CloseAppCommand}">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="F3" Modifiers="Ctrl" Command="{Binding CloseAppCommand}"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/zamknij.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+
+        <MenuItem Header="Przejazd" Style="{StaticResource MenuItemStyle}">
+            <MenuItem.Icon>
+                <Image Source="../../../ikony/droga.png" Style="{StaticResource MenuItemImageStyle}"/>
+            </MenuItem.Icon>
+            <MenuItem Header="Trasy">
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/trasy.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="Lista Tras" InputGestureText="ctrl+t">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="T" Modifiers="Ctrl"/>
+                    </MenuItem.InputBindings>
+                    <MenuItem.Icon>
+                        <Image Source="../../../ikony/trasa.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Dodaj Trasę" InputGestureText="ctrl+shift+t" Command="{Binding NewRouteCommand}">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="T" Modifiers="Ctrl+Shift" Command="{Binding NewRouteCommand}"/>
+                    </MenuItem.InputBindings>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Lista Przystanków" InputGestureText="ctrl+h">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="H" Modifiers="Ctrl"/>
+                    </MenuItem.InputBindings>
+                    <MenuItem.Icon>
+                        <Image Source="../../../ikony/przystanek.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Dodaj Przystanek" InputGestureText="ctrl+shift+h">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="H" Modifiers="Ctrl+Shift"/>
+                    </MenuItem.InputBindings>
+                </MenuItem>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Rozkłady" InputGestureText="ctrl+r">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="R" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/rozkłady.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Na Zamówienie" InputGestureText="ctrl+g">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="G" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Cennik" InputGestureText="ctrl+shift+c">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="C" Modifiers="Ctrl+Shift"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+        </MenuItem>
+
+        <MenuItem Header="Flota" Style="{StaticResource MenuItemStyle}">
+            <MenuItem.Icon>
+                <Image Source="../../../ikony/pojazd.png" Style="{StaticResource MenuItemImageStyle}" />
+            </MenuItem.Icon>
+            <MenuItem Header="Kierowcy" >
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/kierowca.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="Lista Kierowców" InputGestureText="ctrl+k">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="K" Modifiers="Ctrl"/>
+                    </MenuItem.InputBindings>
+                </MenuItem>
+                <MenuItem Header="Dodaj Kierowcę" InputGestureText="ctrl+shift+k" Command="{Binding NewDriverCommand}">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="K" Modifiers="Ctrl+Shift" Command="{Binding NewDriverCommand}"/>
+                    </MenuItem.InputBindings>
+                </MenuItem>
+                <MenuItem Header="Dokumenty Kierowców"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Pojazdy">
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/kierownica.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="Lista Pojazdów" InputGestureText="ctrl+p" Command="{Binding AllVehiclesCommand}">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding AllVehiclesCommand}"/>
+                    </MenuItem.InputBindings>
+                </MenuItem>
+                <MenuItem Header="Dodaj Pojazd" InputGestureText="ctril+shift+p" Command="{Binding NewVehicleCommand}">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="P" Modifiers="Ctrl+Shift" Command="{Binding NewVehicleCommand}"/>
+                    </MenuItem.InputBindings>
+                </MenuItem>
+                <MenuItem Header="Dokumenty Pojazdów"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Lista Zadań" InputGestureText="ctrl+shift+z">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="Z" Modifiers="Ctrl+Shift"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <MenuItem Header="Dodaj Zadanie" InputGestureText="ctrl+alt+z" Command="{Binding NewJobCommand}">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="Z" Modifiers="Ctrl+Alt" Command="{Binding NewJobCommand}"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+        </MenuItem>
+
+        <MenuItem Header="Finanse" Style="{StaticResource MenuItemStyle}">
+            <MenuItem.Icon>
+                <Image Source="../../../ikony/waluta.png" Style="{StaticResource MenuItemImageStyle}"/>
+            </MenuItem.Icon>
+            <MenuItem Header="Lista Ładunków" InputGestureText="ctrl+l">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="L" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/ładunek.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Dodaj Ładunek" InputGestureText="ctrl+shift+l">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="L" Modifiers="Ctrl+Shift"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Faktury" InputGestureText="ctrl+b">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="B" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/faktura.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Dodaj Fakturę" InputGestureText="ctrl+shift+b" Command="{Binding NewInvoiceCommand}">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="B" Modifiers="Ctrl+Shift" Command="{Binding NewInvoiceCommand}"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <MenuItem Header="Opłaty" InputGestureText="ctrl+m">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="M" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Pracownicy" InputGestureText="ctrl+h">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="H" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/Pracownicy.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Usterki" InputGestureText="ctrl+j">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="J" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+                <MenuItem.Icon>
+                    <Image Source="../../../ikony/usterka.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+
+        <MenuItem Header="Ustawienia" Style="{StaticResource MenuItemStyle}">
+            <MenuItem.Icon>
+                <Image Source="../../../ikony/ustawienia.png" Style="{StaticResource MenuItemImageStyle}"/>
+            </MenuItem.Icon>
+            <MenuItem Header="Ogólne" InputGestureText="ctrl+u">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="U" Modifiers="Ctrl"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+            <MenuItem Header="Inne">
+                <MenuItem Header="Przejazd"/>
+                <MenuItem Header="Flota"/>
+                <MenuItem Header="Finanse"/>
+            </MenuItem>
+            <MenuItem Header="Pomoc" InputGestureText="F1">
+                <MenuItem.Icon>
+                    <Image Source="/ikony/pomoc.png" Style="{StaticResource MenuItemImageStyle}"/>
+                </MenuItem.Icon>
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="F1"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
+        </MenuItem>
+    </Menu>
+    
+</UserControl>

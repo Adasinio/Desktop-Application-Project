@@ -1,0 +1,46 @@
+﻿<local:NewViewBase x:Class="Firma_Transport.Views.Workspaces.NoForeignKey.Availabilities.NewAvailability"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma_Transport.Views" 
+                   xmlns:availabilities="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.Availabilities" d:DataContext="{d:DesignInstance Type=availabilities:NewAvailabilityViewModel}"
+                   mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Kod" Margin="0,8,0,8"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,8,0,8" Width="70" HorizontalAlignment="Left"
+                 Text="{Binding Path=Code}" MaxLength="7"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Poniedziałek" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Monday, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Wtorek" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Tuesday, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Środa" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Wednesday, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Czwartek" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Thursday, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Piątek" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Friday, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Label Grid.Row="6" Grid.Column="0" Content="Sobota" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Saturday, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="7" Grid.Column="0" Content="Niedziela" Margin="0,8,0,8"/>
+        <CheckBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=Sunday, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</local:NewViewBase>

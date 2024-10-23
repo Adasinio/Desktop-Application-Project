@@ -1,0 +1,23 @@
+﻿<local:AllViewBase x:Class="Firma_Transport.Views.Workspaces.Jobs.AllJobs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Firma_Transport.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Zadania" Binding="{Binding JobID}"/>
+                <DataGridTextColumn Header="Kod Ładunku" Binding="{Binding CargoCode}"/>
+                <DataGridTextColumn Header="Typ Pasażerski" Binding="{Binding PassangerTypeCode}"/>
+                <DataGridTextColumn Header="Kierowca" Binding="{Binding DriverName}"/>
+                <DataGridTextColumn Header="Pojazd" Binding="{Binding VehicleName}"/>
+                <DataGridTextColumn Header="Okres Powtarzania" Binding="{Binding Reccurency}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Zniżka" Binding="{Binding Discount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:AllViewBase>

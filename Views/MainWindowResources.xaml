@@ -1,0 +1,235 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:vw="clr-namespace:Firma_Transport.View.Workspaces.Vehicles"
+                    xmlns:vw1="clr-namespace:Firma_Transport.View.Workspaces.Drivers"
+                    xmlns:vw2="clr-namespace:Firma_Transport.View.Workspaces.Invoices"
+                    xmlns:vw3="clr-namespace:Firma_Transport.View.Workspaces.Jobs" 
+                    xmlns:vw4="clr-namespace:Firma_Transport.View.Workspaces.Routes"
+                    xmlns:vw5="clr-namespace:Firma_Transport.Views.Workspaces.NoForeignKey.PassangerTypes"
+                    xmlns:vm="clr-namespace:Firma_Transport.ViewModel.Workspaces.Vehicles"
+                    xmlns:vm1="clr-namespace:Firma_Transport.ViewModel.Workspaces.Drivers"
+                    xmlns:vm2="clr-namespace:Firma_Transport.ViewModel.Workspaces.Invoices"
+                    xmlns:vm3="clr-namespace:Firma_Transport.ViewModel.Workspaces.Jobs"
+                    xmlns:vm4="clr-namespace:Firma_Transport.ViewModel.Workspaces.Routes"
+                    xmlns:vm5="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.PassangerTypes" 
+                    xmlns:vw6="clr-namespace:Firma_Transport.Views.Workspaces.NoForeignKey.Addresses" 
+                    xmlns:vw7="clr-namespace:Firma_Transport.Views.Workspaces.NoForeignKey.Availabilities" 
+                    xmlns:vw8="clr-namespace:Firma_Transport.Views.Workspaces.NoForeignKey.DictionaryTables.Reccurencies"
+                    xmlns:vm6="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.Adresses" 
+                    xmlns:vm7="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.Availabilities" 
+                    xmlns:vm8="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.DictionaryTables.Reccurencies"
+                    xmlns:vw9="clr-namespace:Firma_Transport.Views.Workspaces.Jobs" 
+                    xmlns:vw10="clr-namespace:Firma_Transport.Views.Workspaces.Drivers" 
+                    xmlns:vw11="clr-namespace:Firma_Transport.Views.Workspaces.Invoices"
+                    xmlns:vm9="clr-namespace:Firma_Transport.ViewModel.Workspaces.Clients"
+                    xmlns:vw12="clr-namespace:Firma_Transport.Views.Workspaces.Clients"
+                    xmlns:vm10="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.DictionaryTables.VehicleTypes"
+                    xmlns:vw13="clr-namespace:Firma_Transport.Views.Workspaces.NoForeignKey.VehicleTypes"
+                    xmlns:vm11="clr-namespace:Firma_Transport.ViewModel.Workspaces.NoForeignKey.DictionaryTables.JobTitles"
+                    xmlns:vw14="clr-namespace:Firma_Transport.Views.Workspaces.NoForeignKey.JobTitles"
+                    xmlns:vm12="clr-namespace:Firma_Transport.ViewModel.Workspaces.Routes"
+                    xmlns:vw15="clr-namespace:Firma_Transport.Views.Workspaces.Routes"
+                    xmlns:vm13="clr-namespace:Firma_Transport.ViewModel.Workspaces.CargoTypes"
+                    xmlns:vw16="clr-namespace:Firma_Transport.Views.Workspaces.CargoTypes"
+                    >
+
+
+    <DataTemplate DataType="{x:Type vm:NewVehicleViewModel}">
+        <vw:NewVehicle/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllVehiclesViewModel}">
+        <vw:AllVehicles/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm1:NewDriverViewModel}">
+        <vw1:NewDriver/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm1:AllDriversViewModel}">
+        <vw10:AllDrivers/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm2:NewInvoiceViewModel}">
+        <vw2:NewInvoice/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm2:AllInvoicesViewModel}">
+        <vw11:AllInvoices/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm3:NewJobViewModel}">
+        <vw3:NewJob/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm3:AllJobsViewModel}">
+        <vw9:AllJobs/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm5:NewPassangerTypeViewModel}">
+        <vw5:NewPassangerType/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm5:AllPassangerTypesViewModel}">
+        <vw5:AllPassangerTypes/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm6:NewAdressViewModel}">
+        <vw6:NewAdress/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm6:AllAdressesViewModel}">
+        <vw6:AllAdresses/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm7:NewAvailabilityViewModel}">
+        <vw7:NewAvailability/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm7:AllAvailabilitiesViewModel}">
+        <vw7:AllAvailabilities/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm8:NewReccurencyViewModel}">
+        <vw8:NewReccurency/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm8:AllReccurenciesViewModel}">
+        <vw8:AllReccurencies/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm9:AllClientsViewModel}">
+        <vw12:AllClients/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm10:AllVehicleTypesViewModel}">
+        <vw13:AllVehicleTypes/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm10:NewVehicleTypeViewModel}">
+    <vw13:NewVehicleType/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm11:AllJobTitlesViewModel}">
+        <vw14:AllJobTitles/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm11:NewJobTitleViewModel}">
+        <vw14:NewJobTitle/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm12:AllRoutesViewModel}">
+        <vw15:AllRoutes/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm4:NewRouteViewModel}">
+        <vw4:NewRoute/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm13:AllCargoTypesViewModel}">
+        <vw16:AllCargoTypes/>
+    </DataTemplate>
+
+
+    <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- 
+        This template ensures that content of a HeaderedContentControl 
+        fills the available vertical space. 
+        -->
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                    <DockPanel>
+                        <ContentPresenter 
+              DockPanel.Dock="Top"
+              ContentSource="Header" 
+              ContentTemplate="{TemplateBinding HeaderTemplate}" 
+              />
+                        <ContentPresenter 
+              ContentSource="Content" 
+              ContentTemplate="{TemplateBinding ContentTemplate}" 
+              />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--
+  This style ensures that the borders in the main window are consistent.
+  -->
+    <Style x:Key="MainBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="DarkGreen" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+
+    <!--
+  This template explains how to render the list of commands on the left
+  side in the main window (the 'Control Panel' area).
+  -->
+    <DataTemplate x:Key="CommandsTemplate">
+        <ItemsControl IsTabStop="False" ItemsSource="{Binding}" Width="150" Margin="6,2">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding DisplayName}" Command="{Binding Path=Command}" Margin="6" Padding="5" Background="YellowGreen" BorderBrush="DarkGreen" BorderThickness="1"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DataTemplate>
+
+    <!-- 
+  This template explains how to render 
+  a tab item with a close button.
+  -->
+    <DataTemplate x:Key="ClosableTabItemTemplate">
+        <DockPanel Width="120" >
+            <Button 
+        Command="{Binding Path=CloseCommand}"
+        Content="X"
+        Cursor="Hand"
+        DockPanel.Dock="Right"
+        Focusable="False"
+        FontFamily="Courier" 
+        FontSize="9"
+        FontWeight="Bold"  
+        Margin="0,1,0,0"
+        Padding="0"
+        VerticalContentAlignment="Bottom"
+        Width="16" Height="16"
+        Background="YellowGreen"
+        BorderBrush="DarkGreen"
+        BorderThickness="1"
+        />
+            <ContentPresenter 
+        Content="{Binding Path=DisplayName}" 
+        VerticalAlignment="Center" 
+        />
+        </DockPanel>
+    </DataTemplate>
+
+    <!--
+  This template explains how to render the 'Workspace' content area in the main window.
+  -->
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl 
+      IsSynchronizedWithCurrentItem="True" 
+      ItemsSource="{Binding}" 
+      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+      Margin="4"
+      Background="Transparent"
+      BorderBrush="Transparent"
+      />
+    </DataTemplate>
+
+</ResourceDictionary>

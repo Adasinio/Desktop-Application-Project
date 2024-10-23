@@ -1,0 +1,487 @@
+﻿<local:NewViewBase  xmlns:local="clr-namespace:Firma_Transport.Views" 
+                    x:Class="Firma_Transport.View.Workspaces.Jobs.NewJob"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:Jobs="clr-namespace:Firma_Transport.ViewModel.Workspaces.Jobs" 
+                    d:DataContext="{d:DesignInstance Type=Jobs:NewJobViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" >
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="NewJobStyle.xaml"/>
+    </UserControl.Resources>
+
+    <!--#region Region-->
+    <!--#endregion-->
+
+    <!-- Identyfikator zadania, Nazwa Klienta, Numer Klienta, Email Klienta, Obiekt Zadania V, Zadanie Powtarzające się? Okres:Co tydzień, Co Miesiąc, Co Rok-->
+    <!--#region Oldview--><!--
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Identyfikator Zadania" Style="{StaticResource NewJobLabelStyle}"/>
+                    <TextBox Style="{StaticResource NewJobTextBoxStyle}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Nazwa Klienta" Style="{StaticResource NewJobLabelStyle}"/>
+                    <TextBox Style="{StaticResource NewJobTextBoxStyle}"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Numer Telefonu Klienta" Style="{StaticResource NewJobLabelStyle}"/>
+                    <TextBox Style="{StaticResource NewJobTextBoxStyle}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="6"  Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Adres E-mail Klienta" Style="{StaticResource NewJobLabelStyle}"/>
+                    <TextBox Style="{StaticResource NewJobTextBoxStyle}"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+
+                    <StackPanel Style="{StaticResource NewJobStackPanelStyle}" Grid.Row="0">
+                        <Label Content="Zadanie Cykliczne?" Style="{StaticResource NewJobLabelStyle}"/>
+                        <StackPanel Style="{StaticResource NewJobStackPanelStyle2}">
+                            <RadioButton Content="Tak" Name="JobRepeating" Style="{StaticResource NewJobRadioButtonStyle}"/>
+                            <RadioButton Content="Nie" IsChecked="True" Style="{StaticResource NewJobRadioButtonStyle}"/>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource NewJobStackPanelStyle5}">
+                            <Label Content="Cykl" Style="{StaticResource NewJobLabelStyle}"/>
+                            <ComboBox Style="{StaticResource NewJobComboBoxStyle}">
+                                <ComboBoxItem Content="Dzienny"/>
+                                <ComboBoxItem Content="Tygodniowy"/>
+                                <ComboBoxItem Content="Miesięczny"/>
+                                <ComboBoxItem Content="Roczny"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource NewJobStackPanelStyle}" Grid.Row="2">
+                        <Label Content="Obiekt Zadania" Style="{StaticResource NewJobLabelStyle}"/>
+                        <StackPanel Style="{StaticResource NewJobStackPanelStyle2}">
+                            <CheckBox Content="Przewóz Ładunku" Name="CheckPeople" Style="{StaticResource NewJobCheckBoxStyle}"/>
+                            <CheckBox Content="Przewóz Osób" Name="CheckCargo" Style="{StaticResource NewJobCheckBoxStyle}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                        <StackPanel Style="{StaticResource NewJobStackPanelStyle3}" Grid.Row="4">
+                            <Label Content="Ładunek" Style="{StaticResource NewJobLabelStyle}"/>
+                            <ComboBox Style="{StaticResource NewJobComboBoxStyle}">
+                                <ComboBoxItem Content="Miejsce na listę Ładunków"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                    <StackPanel Style="{StaticResource NewJobStackPanelStyle4}" Grid.Row="6">
+                            <Label Content="Liczba Osób" Style="{StaticResource NewJobLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobTextBoxStyle}"/>
+                            <Label Content="Waga Bagażu" Style="{StaticResource NewJobLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobTextBoxStyle}"/>
+                    </StackPanel>
+
+                </Grid>
+
+            </Grid>
+
+
+            <Grid Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Trasa Zadania" Style="{StaticResource NewJobLabelStyle}"/>
+                    <ComboBox Style="{StaticResource NewJobComboBoxStyle}">
+                        <ComboBoxItem Content="Miejsce na listę tras"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Kierowca Zadania" Style="{StaticResource NewJobLabelStyle}"/>
+                    <ComboBox Style="{StaticResource NewJobComboBoxStyle}">
+                        <ComboBoxItem Content="Miejsce na listę kierowców"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Style="{StaticResource NewJobStackPanelStyle}" >
+                    <Label Content="Pojazd Zadania" Style="{StaticResource NewJobLabelStyle}"/>
+                    <ComboBox Style="{StaticResource NewJobComboBoxStyle}">
+                        <ComboBoxItem Content="Miejsce na listę pojazdów"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <Button Grid.Row="6" Style="{StaticResource NewJobButtonStyle}">
+                    <Label Content="Zapisz" FontWeight="Medium"/>
+                </Button>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+    --><!--#endregion-->
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--#region Transport-->
+
+        <Grid Grid.Row="0" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource NewJobPanelBorderStyle}" Grid.Row="0" Background="YellowGreen" />
+            <Label Content="Transport" Style="{StaticResource NewJobPanelLabelStyle}" Grid.Row="0"/>
+            <ToggleButton Grid.Row="0" x:Name="TransportCollapsibleButton" Style="{StaticResource NewJobCollapsiblePanelButtonStyle}">
+                <Image Source="../../../ikony/sortuj.png"/>
+            </ToggleButton>
+
+            <Grid Grid.Row="1">
+
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked,ElementName=TransportCollapsibleButton}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Border Style="{StaticResource NewJobPanelBorderStyle}" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <Button Content="Kierowca" Style="{StaticResource NewJobVariableButtonStyle}" Command="{Binding ShowEmployeesCommand}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Imię" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=DriverName, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Nazwisko" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=DriverSurname, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Numer Telefonu" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=DriverPhoneNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" >
+                    <Button Content="Pojazd" Style="{StaticResource NewJobVariableButtonStyle}" Command="{Binding ShowVehiclesCommand}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Marka" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=VehicleMake, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Model" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=VehicleModel, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Rok Produkcji" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=VehicleYear, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Button Content="Trasa" Style="{StaticResource NewJobVariableButtonStyle}" Command="{Binding ShowRoutesCommand}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Długość Trasy" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=RouteLenght, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Czas Przebycia" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=RouteDuration, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Punkt Startowy" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=RouteStartingLocation, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Punkt Końcowy" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=RouteEndingLocation, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+
+
+            </Grid>
+            
+        </Grid>
+        
+        <!--#endregion-->
+
+        <!--#region Cargo-->
+        
+        <Grid Grid.Row="1"  Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource NewJobPanelBorderStyle}" Grid.Row="0" Background="YellowGreen" />
+            <Label Content="Towar" Style="{StaticResource NewJobPanelLabelStyle}" Grid.Row="0"/>
+            <ToggleButton Grid.Row="0" Name="CargoCollapsibleButton" Style="{StaticResource NewJobCollapsiblePanelButtonStyle}">
+                <Image Source="../../../ikony/sortuj.png"/>
+            </ToggleButton>
+
+            <Grid Grid.Row="1">
+
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked,ElementName=CargoCollapsibleButton}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Style="{StaticResource NewJobPanelBorderStyle}" Grid.ColumnSpan="2"/>
+
+                <StackPanel  Grid.Column="0">
+                    <Button Content="Pasażerowie" Style="{StaticResource NewJobVariableButtonStyle}" Command="{Binding ShowPassangerTypesCommand}"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Minimum Osób" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=NumberMin, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Minimum Bagażu" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=LuggageWeightMin, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Dostępność" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=Accessibility, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Maksimum Osób" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=NumberMax, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Maksimum Bagażu" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=LuggageWeightMax, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel  Grid.Column="1">
+                    <Button Content="Towar" Style="{StaticResource NewJobVariableButtonStyle}" Command="{Binding ShowCargoTypesCommand}"/>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Waga Minimalna" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=WeightMin, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Waga Maksymalna" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=WeightMax, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60" Width="Auto">
+                            <Label Content="Charakterystyka Towaru" Style="{StaticResource NewJobVariableElementLabelStyle}"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}"
+                                     Text="{Binding Path=CargoNature, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+  
+                    </StackPanel>
+                    
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
+        <!--#endregion-->
+
+        <!--#region Cost-->
+
+        <Grid Grid.Row="2"  Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource NewJobPanelBorderStyle}" Grid.Row="0" Background="YellowGreen" />
+            <Label Content="Koszt" Style="{StaticResource NewJobPanelLabelStyle}" Grid.Row="0"/>
+            <ToggleButton Grid.Row="0" Name="CostCollapsibleButton" Style="{StaticResource NewJobCollapsiblePanelButtonStyle}">
+                <Image Source="../../../ikony/sortuj.png"/>
+            </ToggleButton>
+
+            <Grid Grid.Row="1">
+
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked,ElementName=CostCollapsibleButton}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Style="{StaticResource NewJobPanelBorderStyle}" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Okres Powtarzania" Style="{StaticResource NewJobVariableElementLabelStyle}" FontWeight="SemiBold"/>
+                            <ComboBox Style="{StaticResource NewJobComboBoxStyle}"
+                              ItemsSource="{Binding ReccurenciesComboBoxItems}"
+                              DisplayMemberPath="Name"
+                              SelectedValuePath="ReccurencyId"
+                              SelectedValue="{Binding Path=Reccurency, Mode=TwoWay}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60">
+                            <Label Content="Zniżka" Style="{StaticResource NewJobVariableElementLabelStyle}" FontWeight="SemiBold"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}" IsEnabled="True"
+                                         Text="{Binding Path=Discount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                                <Label Content="%" Style="{StaticResource NewJobVariableElementLabelStyle}" />
+                            </StackPanel>
+                            
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="130,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="60" >
+                            <Button Content="Cena" Style="{StaticResource NewJobVariableButtonStyle}" Command="{Binding CalculateJobPriceCommand}" Margin="3,3,3,3"/>
+                            <TextBox Style="{StaticResource NewJobVariableElementTextBoxStyle}" IsEnabled="True" IsReadOnly="True"
+                                     Text="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
+        <!--#endregion-->
+
+    </Grid>
+    
+</local:NewViewBase>

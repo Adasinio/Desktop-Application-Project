@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Firma_Transport.View.UserControls.ToolBar.ToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="ToolBarStyle.xaml"/>
+    </UserControl.Resources>
+
+    <ToolBar >
+            <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                    <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Nowy" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+            <StackPanel>
+                <Image Source="../../../ikony/edytuj.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Edytuj" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                <Image Source="../../../ikony/zapisz.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Zapisz" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                <Image Source="../../../ikony/otwórz.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Otwórz" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+            <Separator/>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                <Image Source="../../../ikony/zatwierdź.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Zatwierdź" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                <Image Source="../../../ikony/cofnij.png" Style="{StaticResource ToolBarImageStyle}" />
+                    <TextBlock Text="Cofnij" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+            <Separator/>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                <Image Source="../../../ikony/kolejny.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Kolejny" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                    <Image Source="../../../ikony/poprzedni.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Poprzedni" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+        <ToggleButton Style="{StaticResource ToolBarToggleButtonStyle}">
+                <StackPanel>
+                    <Image Source="../../../ikony/sortuj.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Sortuj" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </ToggleButton>
+        <ToggleButton Style="{StaticResource ToolBarToggleButtonStyle}">
+                <StackPanel>
+                    <Image Source="../../../ikony/filtruj.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Filtruj" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+            </ToggleButton>
+        <Button Style="{StaticResource ToolBarButtonStyle}">
+                <StackPanel>
+                    <Image Source="../../../ikony/szukaj.png" Style="{StaticResource ToolBarImageStyle}"/>
+                    <TextBlock Text="Szukaj" Style="{StaticResource ToolBarTextBlockStyle}"/>
+                </StackPanel>
+        </Button>
+        <Separator/>
+        <Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding NewVehicleCommand}">
+            <StackPanel>
+                <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Pojazd" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding AllVehiclesCommand}">
+            <StackPanel>
+                <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Pojazdy" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding NewDriverCommand}">
+            <StackPanel>
+                <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Kierowca" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding NewInvoiceCommand}">
+            <StackPanel>
+                <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Faktura" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding NewJobCommand}">
+            <StackPanel>
+                <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Zadanie" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding NewRouteCommand}">
+            <StackPanel>
+                <Image Source="../../../ikony/nowy.png" Style="{StaticResource ToolBarImageStyle}"/>
+                <TextBlock Text="Trasa" Style="{StaticResource ToolBarTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+    </ToolBar>
+</UserControl>

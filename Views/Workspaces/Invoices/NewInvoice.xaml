@@ -1,0 +1,122 @@
+﻿<local:NewViewBase  xmlns:local="clr-namespace:Firma_Transport.Views" 
+                    x:Class="Firma_Transport.View.Workspaces.Invoices.NewInvoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:invoices="clr-namespace:Firma_Transport.ViewModel.Workspaces.Invoices" 
+                    d:DataContext="{d:DesignInstance Type=invoices:NewInvoiceViewModel}"
+                    mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="NewInvoiceStyle.xaml"/>
+    </UserControl.Resources>
+
+    <Grid Background="White"> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Style="{StaticResource NewInvoiceStackPanelStyle}">
+                    <Label Content="Kontrahent" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                    <ComboBox Style="{StaticResource NewInvoiceComboBoxStyle}"
+                              ItemsSource="{Binding ClientsComboBoxItems}"
+                              DisplayMemberPath="Value"
+                              SelectedValuePath="Key"
+                              SelectedValue="{Binding Path=ClientID, Mode=TwoWay}"/>
+                    <Button Content="..." Width="40" Height="40" Command="{Binding ShowClientsCommand}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Style="{StaticResource NewInvoiceStackPanelStyle}" >
+                    <Label Content="Nazwa Kontrahenta" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                    <TextBox IsEnabled="False" Style="{StaticResource NewInvoiceTextBoxStyle}"
+                             Text="{Binding Path=ClientName, UpdateSourceTrigger=PropertyChanged    }"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Style="{StaticResource NewInvoiceStackPanelStyle}" >
+                    <Label Content="Identyfikacja Kontrahenta" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                    <TextBox IsEnabled="False" Style="{StaticResource NewInvoiceTextBoxStyle}"
+                             Text="{Binding Path=ClientNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Style="{StaticResource NewInvoiceStackPanelStyle}">
+                    <Label Content="Data Wystawienia" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                    <DatePicker Style="{StaticResource NewInvoiceDatePickerStyle}"
+                                SelectedDate="{Binding Path=InvoiceDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Style="{StaticResource NewInvoiceStackPanelStyle}" >
+                    <Label Content="Data do Opłacenia" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                    <DatePicker Style="{StaticResource NewInvoiceDatePickerStyle}"
+                                SelectedDate="{Binding Path=DueDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Style="{StaticResource NewInvoiceStackPanelStyle}" >
+                    <StackPanel Grid.Row="0" Style="{StaticResource NewInvoiceStackPanelStyle}" >
+                        <Label Content="Data Opłacenia" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                        <DatePicker Style="{StaticResource NewInvoiceDatePickerStyle}"
+                                    SelectedDate="{Binding Path=PaidDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Style="{StaticResource NewInvoiceStackPanelStyle}" >
+                    <Label Content="Metoda Płatności" Style="{StaticResource NewInvoiceLabelStyle}"/>
+                    <ComboBox Style="{StaticResource NewInvoiceComboBoxStyle}"
+                              ItemsSource="{Binding PaymentMethodsComboBoxItems}"
+                              DisplayMemberPath="Name"
+                              SelectedValuePath="PaymentMethodId"
+                              SelectedValue="{Binding Path=PaymentMethod, Mode=TwoWay}"/>
+                </StackPanel>
+
+                <Button Grid.Row="2" Style="{StaticResource NewInvoiceButtonStyle}">
+                    <Label Content="Zapisz" FontWeight="Medium"/>
+                </Button>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</local:NewViewBase>
+
